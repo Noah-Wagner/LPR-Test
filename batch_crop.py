@@ -23,5 +23,3 @@ for folder_name in os.listdir(directory):
             image = Image.open(image_file_path)
             image = crop_image(image)
             image.save(image_file_path)
-
-print("Done")
