@@ -1,3 +1,4 @@
+PyQt5
 boto3==1.5.9
 botocore==1.8.23
 certifi==2017.11.5
