@@ -16,9 +16,10 @@ def get_image_list():
         if folder_name.endswith(".db"):
             continue
         folder_path = os.path.join(base_directory, folder_name)
-        for image_name in os.listdir(folder_path):
-            if image_name.endswith('.jpg'):
-                image_files.append(os.path.join(folder_path, image_name))
+        if os.path.isdir(folder_path):
+            for image_name in os.listdir(folder_path):
+                if image_name.endswith('.jpg'):
+                    image_files.append(os.path.join(folder_path, image_name))
     return image_files
 
 
