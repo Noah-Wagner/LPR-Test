@@ -2,6 +2,7 @@ import boto3
 import os
 
 from manifest import Manifest
+import validate_file_name
 
 path_prefix = r"N:\User\NAWagner\LPR\Curated"
 responses = []
@@ -38,6 +39,9 @@ def license_plate_format(string):
     string = "".join(string.split())
     string = string.upper()
     string = string.replace('O', '0')
+    string = string.replace('B', '8')
+    string = string.replace('Q', '0')
+    string = string.replace('D', '0')
     return string
 
 
@@ -69,7 +73,7 @@ success = []
 success_count = 0
 total_count = 0
 for row in manifest.data_frame.values:
-    test_result = run_test(row[0], row[1])
+    test_result = run_test(row[1], row[0])
     if test_result:
         success_count += 1
     total_count += 1
