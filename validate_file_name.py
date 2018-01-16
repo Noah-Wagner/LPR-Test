@@ -57,6 +57,7 @@ class LPChecker(QWidget):
         self.lp_view = QLabel(self)
         self.lp_view.setText(get_plate(self.image_list[self.image_idx]))
         self.lp_view.move(920, 20)
+        self.lp_view.resize(200, 20)
 
         self.completion = QLabel(self)
 
